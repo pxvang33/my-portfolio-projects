@@ -21,7 +21,8 @@ class ProjectCard extends Component {
                 <Card className="adjustCard">
                         <CardMedia
                         component='img'
-
+                        height='200'
+                        width='200'
                         img src={this.props.project.thumbnail} alt="" 
                         />
                         <CardContent>
