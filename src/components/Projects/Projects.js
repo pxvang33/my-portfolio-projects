@@ -1,5 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import ProjectCard from './ProjectCard.js';
+
+
 
 class Projects extends Component {
     componentDidMount() {
@@ -14,8 +17,10 @@ class Projects extends Component {
         return (
             <div>
                 <h2>Projects go below</h2>
-                {JSON.stringify(this.props.reduxStore)}
-
+                {/* {JSON.stringify(this.props.reduxStore)} */}
+                {this.props.reduxStore.projects.map((project) => {
+                    return <ProjectCard key={project.id} project={project} />
+                })}
             </div>
         )
     }
