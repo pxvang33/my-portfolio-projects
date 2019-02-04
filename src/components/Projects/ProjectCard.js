@@ -17,7 +17,7 @@ class ProjectCard extends Component {
     render() {
 
         return (
-            <div>
+            <div >
                 <Card className="adjustCard">
                         <CardMedia
                         component='img'
@@ -35,10 +35,10 @@ class ProjectCard extends Component {
                         </CardContent>
                     <CardActions>
                         <Button size="small" color="primary">
-                            {this.props.project.website}
+                            <a href={this.props.project.website}> Website </a>
         </Button>
                         <Button size="small" color="primary">
-                            {this.props.project.github}
+                            <a href={this.props.project.github}>Github</a>
         </Button>
                     </CardActions>
                 </Card>
