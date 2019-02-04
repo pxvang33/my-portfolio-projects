@@ -32,8 +32,8 @@ router.post('/', (req, res) => {
 })
 
 router.delete('/:id', (req, res) => {
-    const project = req.query
-    const queryText = `DELETE FROM "projects" WHERE id=$1;`;
+    const project = req.params
+    const queryText = 'DELETE FROM "projects" WHERE id=$1;';
     pool.query(queryText, [project.id])
         .then((responseFromDatabase) => { 
             console.log('in responseFromDatabase', responseFromDatabase);
