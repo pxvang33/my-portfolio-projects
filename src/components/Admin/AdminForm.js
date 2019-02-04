@@ -85,7 +85,7 @@ class AdminForm extends Component {
                     />
                     <TextField
                         
-                        id="outlined-address"
+                        id="outlined-date"
                         label=""
                         type="date"
                         onChange={this.dateChange}
@@ -93,21 +93,21 @@ class AdminForm extends Component {
                         variant="outlined"
                     /><TextField
                         
-                        id="outlined-city"
+                        id="outlined-github"
                         label="GitHub URL"
                         onChange={this.githubChange}
                         margin="normal"
                         variant="outlined"
                     /><TextField
                         
-                        id="outlined-zip"
+                        id="outlined-website"
                         label="Website URL "
                         onChange={this.websiteChange}
                         margin="normal"
                         variant="outlined"
                     />
                     <TextField
-                        id="outlined-select-currency"
+                        id="outlined-tag"
                         select
                         label="Select"
                         value={this.state.tag}
@@ -126,7 +126,7 @@ class AdminForm extends Component {
                     </TextField>
                     <br />
                     <TextField
-                        id="outlined-multiline-static"
+                        id="outlined-description"
                         label="Description"
                         multiline
                         rows="4"

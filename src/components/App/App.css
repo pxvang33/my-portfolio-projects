@@ -27,11 +27,8 @@
   min-width: 500px;
   max-width: 500px;
   min-height: 300px;
-  margin: 10px;
-  display: inline-block;
+  max-height: 500px;
+  margin: 20px;
   float: left;
 }
 
-.table {
-  min-width: 500px,
-}

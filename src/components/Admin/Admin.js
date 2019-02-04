@@ -12,20 +12,6 @@ import TableHead from '@material-ui/core/TableHead';
 import TableRow from '@material-ui/core/TableRow';
 import Paper from '@material-ui/core/Paper';
 
-{/* <Paper className={classes.root}>
-    <Table >
-        <TableHead>
-            <TableRow>
-                <TableCell>Project Name</TableCell>
-                <TableCell align="right">Delete</TableCell>
-            </TableRow>
-        </TableHead>
-        <TableBody>
-
-        </TableBody>
-    </Table>
-</Paper> */}
-
 class Admin extends Component {
     componentDidMount() {
         this.getProjects();
@@ -34,7 +20,6 @@ class Admin extends Component {
         let action = { type: 'GET_PROJECTS' }
         this.props.dispatch(action)
     }
-
     render() {
         return (
             <div>
@@ -70,21 +55,6 @@ class Admin extends Component {
                         </Table>
                     </Paper>
                 </div>
-                {/* <div>
-                    <table className="projectTable">
-                        <thead>
-                            <tr>
-                                <th>Project Name</th>
-                                <th>Delete</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            {this.props.reduxStore.projects.map((project) => {
-                                return <AdminDelete key={project.id} project={project} />
-                            })}
-                        </tbody>
-                    </table>
-                </div> */}
             </div>
         )
     }

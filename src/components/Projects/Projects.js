@@ -16,8 +16,7 @@ class Projects extends Component {
     render() {
         return (
             <div>
-                <h2>Projects go below</h2>
-                {/* {JSON.stringify(this.props.reduxStore)} */}
+                <h2>Projects </h2>
                 {this.props.reduxStore.projects.map((project) => {
                     return <ProjectCard key={project.id} project={project} />
                 })}

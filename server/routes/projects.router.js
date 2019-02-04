@@ -4,6 +4,8 @@ const pool = require('../modules/pool');
 
 
 router.get('/', (req, res) => {
+    // SELECT "projects"."id", "projects"."name", "projects"."thumbnail", "projects"."website", "projects"."github", "projects"."date_completed", "tags"."name"
+    // FROM "projects" JOIN "tags" ON "tags"."id" = "projects"."tag_id"; 
     const queryText = `SELECT * FROM "projects";`
     pool.query(queryText).then((result) => {
         console.log('in result', result.rows);
@@ -15,9 +17,6 @@ router.get('/', (req, res) => {
 });
 
 router.post('/', (req, res) => {
-    // post route which recieves feedbackReview information that was sent
-    // sends info to sql server and stores it there
-    // console.log('in /projects POST:', req.body);
     const project = req.body;
     const queryText = `INSERT INTO "projects" ("name", "description", "website", "github", "date_completed", "tag_id")
                         VALUES ($1, $2, $3, $4, $5, $6);`;
