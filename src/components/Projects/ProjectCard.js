@@ -35,10 +35,10 @@ class ProjectCard extends Component {
                         </CardContent>
                     <CardActions>
                         <Button size="small" color="primary">
-                            <a href={this.props.project.website}> Website </a>
+                            <a target="blank" href={this.props.project.website}> Website </a>
         </Button>
                         <Button size="small" color="primary">
-                            <a href={this.props.project.github}>Github</a>
+                            <a target="blank" href={this.props.project.github}>Github</a>
         </Button>
                     </CardActions>
                 </Card>
