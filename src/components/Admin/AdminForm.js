@@ -21,44 +21,54 @@ class AdminForm extends Component {
                 ...this.state,
             projectName: event.target.value,
         });
+        console.log(this.state);
+        
     }
     dateChange = (event) => {
         this.setState({
             ...this.state,
             date: event.target.value,
         });
+        console.log(this.state);
+
     }
     githubChange = (event) => {
         this.setState({
             ...this.state,
             github: event.target.value,
         });
+        console.log(this.state);
+
     }
     websiteChange = (event) => {
         this.setState({
             ...this.state,
             website: event.target.value,
         });
+        console.log(this.state);
+
     }
     tagChange = (event) => {
         this.setState({
             ...this.state,
-            tag: event.target.value,
+            tag: parseInt(event.target.value),
         });
+        console.log(this.state);
+
     }
     descriptionChange = (event) => {
         this.setState({
             ...this.state,
             description: event.target.value,
         });
+        console.log(this.state);
+
     }
-    // addCustomer sends customer information from state and dispatches to reduxStore
     addProject = (event) => {
         event.preventDefault();
-        const customerInfo = this.state.customerToAdd
-        const action = { type: 'ADD_NEW_CUSTOMER', payload: customerInfo };
+        const projectInfo = this.state
+        const action = { type: 'ADD_PROJECTS', payload: projectInfo };
         this.props.dispatch(action);
-        this.props.history.push('/checkout');
     }
     render() {
         return (
@@ -106,13 +116,13 @@ class AdminForm extends Component {
                         margin="normal"
                         variant="outlined"
                     >
-                        <option value="" />
-                        <option value={'React'}>React </option>
-                        <option value={'jQuery'}>jQuery</option>
-                        <option value={'Node'}>Node</option>
-                        <option value={'SQL'}>SQL</option>
-                        <option value={'Redux'}>Redux </option>
-                        <option value={'HTML'}>HTML </option>
+                        <option value={" "} />
+                        <option value={1}>React </option>
+                        <option value={2}>jQuery</option>
+                        <option value={3}>Node</option>
+                        <option value={4}>SQL</option>
+                        <option value={5}>Redux </option>
+                        <option value={6}>HTML </option>
                     </TextField>
                     <br />
                     <TextField

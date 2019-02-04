@@ -15,6 +15,7 @@ import axios from 'axios';
 // Create the rootSaga generator function
 function* rootSaga() {
     yield takeEvery('GET_PROJECTS', getProject)
+    yield takeEvery('ADD_PROJECTS', addProject)
 
 }
 function* getProject(){
@@ -25,6 +26,15 @@ function* getProject(){
     }catch(error){
         console.log('SET_PROJECTS get request not working', error);
         
+    }
+}
+function* addProject(action) {
+    try {
+        yield axios.post('/projects', action.payload);
+        const nextAction = { type: 'GET_PROJECTS' }
+        yield put(nextAction);
+    } catch (error) {
+        console.log('Error making POST request');
     }
 }
 // Create sagaMiddleware
