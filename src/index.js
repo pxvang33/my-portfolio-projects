@@ -16,16 +16,17 @@ import axios from 'axios';
 function* rootSaga() {
     yield takeEvery('GET_PROJECTS', getProject)
     yield takeEvery('ADD_PROJECTS', addProject)
+    yield takeEvery('DELETE_PROJECTS', deleteProject);
 
 }
-function* getProject(){
-    try{
+function* getProject() {
+    try {
         const serverResponse = yield axios.get('/projects');
-        const nextAction = { type: 'SET_PROJECTS', payload: serverResponse.data}
+        const nextAction = { type: 'SET_PROJECTS', payload: serverResponse.data }
         yield put(nextAction)
-    }catch(error){
+    } catch (error) {
         console.log('SET_PROJECTS get request not working', error);
-        
+
     }
 }
 function* addProject(action) {
@@ -34,7 +35,17 @@ function* addProject(action) {
         const nextAction = { type: 'GET_PROJECTS' }
         yield put(nextAction);
     } catch (error) {
-        console.log('Error making POST request');
+        console.log('Error making POST request', error);
+    }
+}
+function* deleteProject(action) {
+    let projectId = action.payload.projectId;
+    try {
+        yield axios.delete(`/projects/${projectId}`);
+        let nextAction = { type: 'GET_PROJECTS' };
+        yield put(nextAction);
+    } catch (error) {
+        console.log('in delete error', error);
     }
 }
 // Create sagaMiddleware
@@ -73,6 +84,6 @@ const storeInstance = createStore(
 // Pass rootSaga into our sagaMiddleware
 sagaMiddleware.run(rootSaga);
 
-ReactDOM.render(<Provider store={storeInstance}><App /></Provider>, 
+ReactDOM.render(<Provider store={storeInstance}><App /></Provider>,
     document.getElementById('root'));
 registerServiceWorker();
