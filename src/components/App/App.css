@@ -29,3 +29,7 @@
   margin: 10px;
   display: inline-block;
 }
+
+.table {
+  min-width: 500px,
+}
