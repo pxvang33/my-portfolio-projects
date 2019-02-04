@@ -8,7 +8,7 @@ router.get('/', (req, res) => {
     pool.query(queryText).then((result) => {
         console.log('in result', result.rows);
         res.send(result.rows);
-        res.sendStatus(200);
+        // res.sendStatus(200);
     }).catch((error) => {
         console.log('in error', error);
     })

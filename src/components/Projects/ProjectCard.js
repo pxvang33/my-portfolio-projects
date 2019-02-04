@@ -42,7 +42,7 @@ class ProjectCard extends Component {
         </Button>
                     </CardActions>
                 </Card>
-                <span>{this.props.project.name}</span>
+                {/* <span>{this.props.project.name}</span> */}
                 {/* <td>{this.props.plant.location}</td>
                 <td>{this.props.plant.quantity}</td> */}
             </div>

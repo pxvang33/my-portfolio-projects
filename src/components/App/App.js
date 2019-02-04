@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import './App.css';
-import Projects from '../Projects/Projects'
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+import Projects from '../Projects/Projects.js'
+import Admin from '../Admin/Admin.js'
+
 
 
 class App extends Component {
@@ -9,10 +13,14 @@ class App extends Component {
     return (
       <div className="App">
         <p>Empty Page</p>
+        <Router>
+          <div>
 
-        <div>
-          <Projects />
-        </div>
+            <Route exact path="/" component={Projects} />
+            <Route exact path="/admin" component={Admin} />
+          </div>
+        </Router>
+
       </div>
     );
   }
